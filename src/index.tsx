@@ -4,3 +4,4 @@ export * from './ElapsedTimeLiveShort';
 export * from './ElapsedTime';
 export * from './DateDDMMMYY';
 export * from './BooleanIcon';
+export * from './StatusIcon';
