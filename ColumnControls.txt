@@ -44,3 +44,13 @@ Boolean Columns
 BooleanIcon				This will display a tick for true and a cross for false
 
 
+Specials
+========
+LookupValue				This will allow you to look up a value from a page component containing a list specifying the key and value columns and to 
+						output the result instead of the key. e.g. the data is a numeric value that equates to a friendly text representation by looking it up in a list.
+						for each column using this you need to add attributes to the table  - 3 for each column: -
+						LookupListComponent_<typeElementPropertyId of the column>  =  The name of the page component which has the list in it's data source - name not id
+						LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
+						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display
+
+						The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
