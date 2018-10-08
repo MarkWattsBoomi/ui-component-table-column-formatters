@@ -38,6 +38,5 @@ This component allows you to apply numerous formats to data in Flow table column
 						for each column using this you need to add attributes to the table  - 3 for each column: -
 						LookupListComponent_<typeElementPropertyId of the column>  =  The name of the page component which has the list in it's data source - name not id
 						LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
-						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display
-
+						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display.
 						The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
