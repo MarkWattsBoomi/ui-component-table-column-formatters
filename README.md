@@ -1,59 +1,43 @@
-A small `webpack` based boilerplate for creating custom Boomi Flow UI components.
+# Table Column Formatters
+
+This component allows you to apply numerous formats to data in Flow table columns.
+
 
 ## Setup
 
-- Download or clone this repo
-- `npm install`
+- Grab the js file from the /dist folder and upload it as an asset to your tenant.
 
-## Included Components
+- Add the file to your player code like this: -
 
-This boilerplate includes examples components for:
+        requires: ['core', 'bootstrap3'],
+        customResources: [
+                'https://s3.amazonaws.com/files-manywho-com/tenant-id/ColumnControls.js'
+                ],
 
-- Basic rendering `basic.tsx`
-- Input `input.tsx`
+- In the page designer open the metadata and find the column you want to apply the formatter to and change its "componentType" to one of the following: -
 
-## Writing a Custom Component
+## Formatter Types
 
-Create the custom component in a new `.tsx` file, then re-export them in `index.tsx` e.g. `export * from './component';`. Any custom styles can be added in a separate `.css` file which is imported into the `.tsx` file.
+### DateTime Columns
 
-## Testing
+DateDDMMMYY				This will output the date like "14 May 07"
+ElapsedTime				This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds
+ElapsedTimeLiveLong		This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds and will update this every seconds
+ElapsedTimeLiveShort	This will show the diference between the date and now and show it as xd/xh/xm/xs and will update this every seconds
+ElapsedTimeFriendly		This will show the diference between the date and now and show it as a friendly string like "a few minutes ago" or "an hour ago"
 
-You can start the local development server with `npm run dev`. This will serve the compiled javascript and css at `http://localhost:8080/custom-component.js` and `http://localhost:8080/custom-component.css`.
+### Boolean Columns
 
-The easiest way to test a custom component would be to create a custom player then add references to the `custom-components.js` and `custom-components.css` as custom resources, more information on loading custom resources can be found here: https://docs.manywho.com/adding-custom-javascript-and-stylesheets/
+BooleanIcon				This will display a tick for true and a cross for false
 
-The local development server won't be accessible from `flow.manywho.com`, you can workaround this by using a tunnel like https://ngrok.com/download
 
-Run ngrok with: 
+### Specials
 
-```
-ngrok http 8080 -host-header="localhost:8080"
-```
+LookupValue				This will allow you to look up a value from a page component containing a list specifying the key and value columns and to 
+						output the result instead of the key. e.g. the data is a numeric value that equates to a friendly text representation by looking it up in a list.
+						for each column using this you need to add attributes to the table  - 3 for each column: -
+						LookupListComponent_<typeElementPropertyId of the column>  =  The name of the page component which has the list in it's data source - name not id
+						LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
+						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display
 
-If that fails then try:
-
-```
-ngrok http --host-header=rewrite 8080
-```
-
-ngrok will provide a url like `https://ad7c2b13.ngrok.io` that will point to `http://localhost:8080`, for example you would add the following as custom resources in a player:
-
-```
-https://ad7c2b13.ngrok.io/custom-components.js,
-https://ad7c2b13.ngrok.io/custom-components.css
-```
-
-After making changes to your custom component you can refresh the browser running the flow for the changes to be picked up.
-
-## Deploying
-
-Run the `npm run build` command to create a production build of `custom-components.js` and `custom-components.css`. You can then host these two files either by using the built in Assets support (more information can be found here: https://docs.manywho.com/everything-you-want-to-know-about-assets/) or a 3rd party file hosting environment.
-
-After the `.js` and `.css` files are available from a file host you can reference them in a custom player as custom resources.
-
-## Configuration
-
-You can change the generated filenames from `custom-components.js` and `custom-components.css` by editing the `webpack.config.js` file:
-
-- line 6 for `custom-components.js`
-- line 36 for `custom-components.css`
+						The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
