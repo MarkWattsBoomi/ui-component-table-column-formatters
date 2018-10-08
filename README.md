@@ -21,6 +21,7 @@ This component allows you to apply numerous formats to data in Flow table column
 ### DateTime Columns
 
 - DateDDMMMYY
+
 This will output the date like "14 May 07"
 
 - ElapsedTime
