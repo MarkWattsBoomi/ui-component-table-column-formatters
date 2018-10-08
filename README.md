@@ -20,11 +20,24 @@ This component allows you to apply numerous formats to data in Flow table column
 
 ### DateTime Columns
 
-- DateDDMMMYY				This will output the date like "14 May 07"
-- ElapsedTime				This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds
-- ElapsedTimeLiveLong		This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds and will update this every seconds
-- ElapsedTimeLiveShort	This will show the diference between the date and now and show it as xd/xh/xm/xs and will update this every seconds
-- ElapsedTimeFriendly		This will show the diference between the date and now and show it as a friendly string like "a few minutes ago" or "an hour ago"
+- DateDDMMMYY
+This will output the date like "14 May 07"
+
+- ElapsedTime
+
+This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds.
+
+- ElapsedTimeLiveLong
+
+This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds and will update this every seconds
+
+- ElapsedTimeLiveShort	
+
+This will show the diference between the date and now and show it as xd/xh/xm/xs and will update this every seconds
+
+- ElapsedTimeFriendly		
+
+This will show the diference between the date and now and show it as a friendly string like "a few minutes ago" or "an hour ago"
 
 ### Boolean Columns
 
