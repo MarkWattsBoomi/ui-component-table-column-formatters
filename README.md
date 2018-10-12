@@ -24,6 +24,18 @@ This component allows you to apply numerous formats to data in Flow table column
 
 This will output the date like "14 May 07"
 
+- DateTimeDDMMMYYHHMM
+
+This will output the date like "12 Jan 16 14: 45" but the source is expected to be an epoch number of seconds.
+
+- EpochDateDDMMMYY
+
+This will output the date like "14 May 07" but the source is expected to be an epoch number of seconds.
+
+- Epoch DateTimeDDMMMYYHHMM
+
+This will output the date like "12 Jan 16 14: 45"
+
 - ElapsedTime
 
 This will show the diference between the date and now and show it as x days, x hours, x minutes, x seconds.

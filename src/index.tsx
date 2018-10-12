@@ -7,5 +7,6 @@ export * from './DateTimeDDMMMYYHHMM';
 export * from './BooleanIcon';
 export * from './StatusIcon';
 export * from './LookupValue';
-export * from './EpochDateTimeDDMMMYYYYHHMM';
+export * from './EpochDateDDMMMYY';
+export * from './EpochDateTimeDDMMMYYHHMM';
 
