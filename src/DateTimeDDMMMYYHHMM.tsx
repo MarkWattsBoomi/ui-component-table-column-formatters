@@ -2,7 +2,7 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class DateTimeDDMMMYYHHSS extends React.Component<any, any> 
+class DateTimeDDMMMYYHHMM extends React.Component<any, any> 
 {   
     constructor(props : any)
 	{
@@ -37,6 +37,6 @@ class DateTimeDDMMMYYHHSS extends React.Component<any, any>
     }
 }
 
-manywho.component.register('DateTimeDDMMMYYHHSS', DateTimeDDMMMYYHHSS);
+manywho.component.register('DateTimeDDMMMYYHHMM', DateTimeDDMMMYYHHMM);
 
-export default DateTimeDDMMMYYHHSS;
+export default DateTimeDDMMMYYHHMM;

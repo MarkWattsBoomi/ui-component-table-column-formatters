@@ -2,7 +2,7 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class EpochDateTimeDDMMMYYHHMM extends React.Component<any, any> 
+class EpochDateDDMMMYY extends React.Component<any, any> 
 {   
     constructor(props : any)
 	{
@@ -19,9 +19,10 @@ class EpochDateTimeDDMMMYYHHMM extends React.Component<any, any>
 	   
         if(this.props.contentValue)
         {
-            var ed : Date = new Date(0);
+            
             var seconds : number = Number.parseInt(this.props.contentValue);
-            ed.setUTCSeconds(seconds);
+            var ed : Date = new Date(seconds);
+
             //format the date using React formatter into dt string
             var dt = new Intl.DateTimeFormat('en-GB', {   
                 year: 'numeric', 
@@ -38,6 +39,6 @@ class EpochDateTimeDDMMMYYHHMM extends React.Component<any, any>
     }
 }
 
-manywho.component.register('EpochDateTimeDDMMMYYYYHHMM', EpochDateTimeDDMMMYYHHMM);
+manywho.component.register('EpochDateDDMMMYY', EpochDateDDMMMYY);
 
-export default EpochDateTimeDDMMMYYHHMM;
+export default EpochDateDDMMMYY;

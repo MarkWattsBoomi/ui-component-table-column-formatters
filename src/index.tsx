@@ -9,4 +9,6 @@ export * from './StatusIcon';
 export * from './LookupValue';
 export * from './EpochDateDDMMMYY';
 export * from './EpochDateTimeDDMMMYYHHMM';
+export * from './PercentProgressBar';
+export * from './Hyperlink';
 

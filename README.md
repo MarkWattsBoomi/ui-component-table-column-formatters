@@ -32,7 +32,7 @@ This will output the date like "12 Jan 16 14: 45" but the source is expected to 
 
 This will output the date like "14 May 07" but the source is expected to be an epoch number of seconds.
 
-- Epoch DateTimeDDMMMYYHHMM
+- EpochDateTimeDDMMMYYHHMM
 
 This will output the date like "12 Jan 16 14: 45"
 
@@ -66,3 +66,16 @@ This will show the diference between the date and now and show it as a friendly 
 						LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
 						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display.
 						The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
+
+- PercentProgressBar	This is a coloured progress bar which uses the column value as a percent and displays the the value out of 100 as a filled coloured block.
+
+- Hyperlink				This displays the value as a clickable hyperlink which will open in a new window when clicked.
+
+- StatusIcon			This will display a bootstrap glyph icon and tooltip equivalent to the following values: -
+						""  = glyphicon-option-horizontal  "Not Set"
+						"s" = glyphicon-hourglass  "Staged"
+						"c" = glyphicon-ok  "Complete"
+						"a" = glyphicon-flash  "Active
+
+
+              

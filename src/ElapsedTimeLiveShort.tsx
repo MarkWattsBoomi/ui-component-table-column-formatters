@@ -16,7 +16,7 @@ class ElapsedTimeLiveShort extends React.Component<any, any>
   componentDidMount() 
   {
       this.forceUpdate();
-      this.timerID = setInterval(this.timerEvent.bind(this), 1000);
+      this.timerID = window.setInterval(this.timerEvent.bind(this), 1000);
   }
 
   componentWillUnmount()
