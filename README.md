@@ -22,13 +22,11 @@ This component allows you to apply numerous formats to data in Flow table column
 
 - DateDDMMMYY
 
-		This will output the date like "14 May 07"
-
+This will output the date like "14 May 07"
 
 - DateTimeDDMMMYYHHMM
 
-		This will output the date like "12 Jan 16 14: 45" but the source is expected to be an epoch number of seconds.
-		
+This will output the date like "12 Jan 16 14: 45" but the source is expected to be an epoch number of seconds.
 
 - EpochDateDDMMMYY
 
