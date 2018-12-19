@@ -59,19 +59,27 @@ This will show the diference between the date and now and show it as a friendly 
 
 ### Specials
 
-- LookupValue				This will allow you to look up a value from a page component containing a list specifying the key and value columns and to 
-						output the result instead of the key. e.g. the data is a numeric value that equates to a friendly text representation by looking it up in a list.
-						for each column using this you need to add attributes to the table  - 3 for each column: -
-						LookupListComponent_<typeElementPropertyId of the column>  =  The name of the page component which has the list in it's data source - name not id
-						LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
-						LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display.
-						The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
+- LookupValue			
 
-- PercentProgressBar	This is a coloured progress bar which uses the column value as a percent and displays the the value out of 100 as a filled coloured block.
+This will allow you to look up a value from a page component containing a list specifying the key and value columns and to 
+output the result instead of the key. e.g. the data is a numeric value that equates to a friendly text representation by looking it up in a list.
+for each column using this you need to add attributes to the table  - 3 for each column: -
+LookupListComponent_<typeElementPropertyId of the column>  =  The name of the page component which has the list in it's data source - name not id
+LookupListKeyAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the key lookup field
+LookupListResultAttribute_<typeElementPropertyId of the column>  =  The name of the column containing the value you want to display.
+The typeElementPropertyId is found in the metadata editor looking at the specific column of the table
 
-- Hyperlink				This displays the value as a clickable hyperlink which will open in a new window when clicked.
+- PercentProgressBar	
 
-- StatusIcon			This will display a bootstrap glyph icon and tooltip equivalent to the following values: -
+This is a coloured progress bar which uses the column value as a percent and displays the the value out of 100 as a filled coloured block.
+
+- Hyperlink				
+
+This displays the value as a clickable hyperlink which will open in a new window when clicked.
+
+- StatusIcon			
+
+This will display a bootstrap glyph icon and tooltip equivalent to the following values: -
 						""  = glyphicon-option-horizontal  "Not Set"
 						"s" = glyphicon-hourglass  "Staged"
 						"c" = glyphicon-ok  "Complete"
