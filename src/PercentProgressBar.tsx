@@ -1,7 +1,6 @@
 declare var manywho: any;
 
 import * as React from 'react';
-import Tooltip from 'react-simple-tooltip';
 
 class PercentProgressBar extends React.Component<any, any> 
 {   

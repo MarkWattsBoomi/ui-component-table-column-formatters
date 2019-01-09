@@ -1,7 +1,6 @@
 declare var manywho: any;
 
 import * as React from 'react';
-import * as Moment from 'moment';
 
 class ElapsedTimeLiveLong extends React.Component<any, any> 
 {   
@@ -16,7 +15,7 @@ class ElapsedTimeLiveLong extends React.Component<any, any>
   componentDidMount() 
   {
       this.forceUpdate();
-      this.timerID = setInterval(this.timerEvent.bind(this), 1000);
+      this.timerID = window.setInterval(this.timerEvent.bind(this), 1000);
   }
 
   componentWillUnmount()

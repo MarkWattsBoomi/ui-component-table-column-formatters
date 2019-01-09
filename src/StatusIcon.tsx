@@ -1,7 +1,6 @@
 declare var manywho: any;
 
 import * as React from 'react';
-import Tooltip from 'react-simple-tooltip';
 
 class StatusIcon extends React.Component<any, any> 
 {   
@@ -43,7 +42,7 @@ class StatusIcon extends React.Component<any, any>
         }
 
 
-        return <Tooltip border="#ffffff" radius="5" placement="left" content={tooltip}><span className={className}></span></Tooltip>;
+        return <span className={className} title={tooltip}></span>;
     }
 }
 

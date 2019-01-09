@@ -1,7 +1,6 @@
 declare var manywho: any;
 
 import * as React from 'react';
-import * as Moment from 'moment';
 
 class ElapsedTimeLiveShort extends React.Component<any, any> 
 {   

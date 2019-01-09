@@ -1,7 +1,6 @@
 declare var manywho: any;
 
 import * as React from 'react';
-import * as $ from 'jquery';
 import * as ReactDom from 'react-dom';
 
 
@@ -78,7 +77,20 @@ class LookupValue extends React.Component<any, any>
         var label : string = "";
         if(this.props.contentValue && me)
         {
-            var componentId = $(me).closest('.table-container').attr('id');
+            //iterate up looking for the element with class .table-container, it will have the table's id value on it
+            var maxLevels = 10;
+            var parent : HTMLElement = me.parentElement;
+            while(!parent.classList.contains("table-container") || maxLevels == 0)
+            {
+                parent=parent.parentElement;
+                maxLevels--;
+            }
+
+            if(maxLevels==0)
+            {
+                return "";
+            }
+            var componentId = parent.attributes.getNamedItem('id').value;
             var table = manywho.model.getComponent(componentId,this.props.flowKey);
 
             var propertyId = this.props.propertyId;
