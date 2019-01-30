@@ -19,8 +19,15 @@ class EpochDateDDMMMYY extends React.Component<any, any>
 	   
         if(this.props.contentValue)
         {
+            var secval = this.props.contentValue;
+            var seconds : number= Number.parseInt(this.props.contentValue);
+
+            //handle java epoch with decimal point
+            if(secval.indexOf(".")>=0)
+            {
+                seconds = seconds * 1000;
+            }
             
-            var seconds : number = Number.parseInt(this.props.contentValue);
             var ed : Date = new Date(seconds);
 
             //format the date using React formatter into dt string
