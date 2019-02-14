@@ -11,4 +11,5 @@ export * from './EpochDateDDMMMYY';
 export * from './EpochDateTimeDDMMMYYHHMM';
 export * from './PercentProgressBar';
 export * from './Hyperlink';
+export * from './Thumbnail';
 

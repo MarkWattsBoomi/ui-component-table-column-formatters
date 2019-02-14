@@ -24,37 +24,39 @@ class PercentProgressBar extends React.Component<any, any>
 
         var tooltip : string = value + "%";
         
-        var outerStyle = {
-                "border" : "2px solid #adadad",
-                "border-radius":"5px",
-                "background-color":"#e3e3e3",
-                "width":"100px",
-                "height":"30px",
-                "box-sizing": "content-box",
-                "position" : "relative" as "relative",
+        var outerStyle : React.CSSProperties = {
+                border : "2px solid #adadad",
+                borderRadius:"5px",
+                backgroundColor:"#e3e3e3",
+                height:"30px",
+                boxSizing: "content-box",
+                position : "relative" as "relative",
+                display: "grid",
+                alignContent: 'middle',
+                margin: '0 !important'
             };
 
-        var barStyle = {
-            "border" : "none",
-            "border-radius":"4px",
-            "background-color":"#7D9ACF",
-            "width": displayValue,
-            "text-align" : "centre",
-            "height": "100%",
+        var barStyle : React.CSSProperties = {
+            border: "none",
+            borderRadius:"4px",
+            backgroundColor:"#7D9ACF",
+            width: displayValue,
+            textAlign : "center" ,
+            height: "100%",
             };
 
-        var captionStyle = {
-                "font-family" : "tahoma",
-                "color" : "#ffffff",
-                "font-size" : "10pt",
-                "width" : "100%",
-                "text-align" : "center",
-                "position" : "absolute" as "absolute",
-                "height": "100%",
-                "vertical-align": "middle",
-                "line-height": "200%",
-                "mix-blend-mode": "difference",
-
+        var captionStyle : React.CSSProperties = {
+            fontFamily : "tahoma",
+            color : "#ffffff",
+            fontSize : "10pt",
+            width : "100%",
+            textAlign : "center",
+            position : "absolute" as "absolute",
+            height: "100%",
+            verticalAlign: "middle",
+            lineHeight: "200%",
+            mixBlendMode: "difference",
+            left: 0
             };
 
         var max = 100;

@@ -86,4 +86,6 @@ This will display a bootstrap glyph icon and tooltip equivalent to the following
 						"a" = glyphicon-flash  "Active
 
 
-              
+- Thumbnail
+This will display an image in the column.  it expects the field's content value to either be the uri to an image or a data-uri containing the base 64 data.
+Set an attribute on the table named "image-scaled-width" to the width you want the image displayed at / scaled to
