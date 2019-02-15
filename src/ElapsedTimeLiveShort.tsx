@@ -49,7 +49,8 @@ class ElapsedTimeLiveShort extends React.Component<any, any>
 
   elapsedTime (fromDate : Date) 
   {
-    var nTotalDiff = Math.round((new Date()).getTime() / 1000) - (fromDate.getTime() / 1000);
+    const correctedDate = new Date(fromDate.getTime() + (fromDate.getTimezoneOffset() *60 *1000));
+    var nTotalDiff = Math.round((new Date()).getTime() / 1000) - (correctedDate.getTime() / 1000);
     if (nTotalDiff >= 0) 
     {
       var oDiff : any = {};
