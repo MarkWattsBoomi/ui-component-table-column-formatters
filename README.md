@@ -59,6 +59,35 @@ This will show the diference between the date and now and show it as a friendly 
 
 ### Specials
 
+- TableRowFormatter
+
+This will apply a css style to the table row based on the value of the column.
+
+Add an attribute to the table called "trfConfig" and set its value to a JSON String like this: -
+
+{
+  “possibleColumnValue”:”styleNameToApply”,
+  “possibleColumnValue”:”styleNameToApply”,
+  “possibleColumnValue”:”styleNameToApply”
+}
+
+So an example would be { “complete”:”green-row”, “inprogess”:”yellow-row”,  “error”:”red-row”}
+
+This tells the component to look for a value of “complete” in the column and if found to add a class called .green-row to the row.
+
+Add the corresponding styles to your player e.g.
+
+<style >
+        .green-line {
+            background-color: green;
+        }
+        
+        .red-line {
+            background-color: red;
+        }
+    </style>
+
+
 - LookupValue			
 
 This will allow you to look up a value from a page component containing a list specifying the key and value columns and to 

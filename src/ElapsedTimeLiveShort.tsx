@@ -1,6 +1,7 @@
 declare var manywho: any;
 
 import * as React from 'react';
+import { TimeHelpers, iElapsed } from './DateTimeHelpers';
 
 class ElapsedTimeLiveShort extends React.Component<any, any> 
 {   
@@ -49,58 +50,43 @@ class ElapsedTimeLiveShort extends React.Component<any, any>
 
   elapsedTime (fromDate : Date) 
   {
-    const correctedDate = new Date(fromDate.getTime() + (fromDate.getTimezoneOffset() *60 *1000));
-    var nTotalDiff = Math.round((new Date()).getTime() / 1000) - (correctedDate.getTime() / 1000);
-    if (nTotalDiff >= 0) 
-    {
-      var oDiff : any = {};
-      oDiff.days = Math.floor(nTotalDiff / 86400);
-      nTotalDiff -= oDiff.days * 86400;
-      oDiff.hours = Math.floor(nTotalDiff / 3600);
-      nTotalDiff -= oDiff.hours * 3600;
-      oDiff.minutes = Math.floor(nTotalDiff / 60);
-      nTotalDiff -= oDiff.minutes * 60;
-      oDiff.seconds = Math.floor(nTotalDiff);
-      
+
+    const elapsed : iElapsed = TimeHelpers.getElapsed(fromDate, new Date());
+          
       var result = "";
-      if(oDiff.days > 0)
+      if(elapsed.days > 0)
       {
-          result += oDiff.days + "d";
+          result += elapsed.days + "d";
       }
 
-      if(oDiff.hours > 0)
+      if(elapsed.hours > 0)
       {
         if(result.length > 0)
         {
           result += "/";
         }
-          result += oDiff.hours + "h";
+          result += elapsed.hours + "h";
       }
 
-      if(oDiff.minutes > 0)
+      if(elapsed.minutes > 0)
       {
         if(result.length > 0)
         {
           result += "/";
         }
-          result += oDiff.minutes + "m";
+          result += elapsed.minutes + "m";
       }
 
-      if(oDiff.seconds > 0)
+      if(elapsed.seconds > 0)
       {
         if(result.length > 0)
         {
           result += "/";
         }
-          result += oDiff.seconds + "s";
+          result += elapsed.seconds + "s";
       }
 
       return result;
-    } 
-    else 
-    {
-      return "";
-    }
   }
 }
 

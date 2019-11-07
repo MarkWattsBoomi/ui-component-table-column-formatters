@@ -18,31 +18,65 @@ class StatusIcon extends React.Component<any, any>
 	{
         var className : any = "glyphicon glyphicon-";
         var tooltip : string = "";
+        let result: any;
         switch(this.props.contentValue.toLowerCase())
         {
-            case "":
-                className += "option-horizontal";
-                tooltip = "Not set"
-                break;
-
             case "s":
-                className += "hourglass";
-                tooltip = "Staged"
-                break;
+                result=(
+                    <span 
+                        className={"glyphicon glyphicon-hourglass"} 
+                        title={"Staged"}
+                    />
+                );
 
             case "c":
-                className += "ok";
-                tooltip = "Complete"
+                result=(
+                    <span 
+                        className={"glyphicon glyphicon-ok"} 
+                        title={"Complete"}
+                    />
+                );
                 break;
-            
+
             case "a":
-                className += "flash";
-                tooltip = "Active"
+                result=(
+                    <span 
+                        className={"glyphicon glyphicon-flash"} 
+                        title={"Active"}
+                    />
+                );
+                break;
+
+            case "complete": 
+                result=(
+                    <img 
+                        className="tcf-image"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAd0lEQVR42mNggAKlMIYGpVCG/ygYKMaADGASBkUs/13mcIExiA0TRzHJaQYnVgw3GcTQy2P+bz+JAysGyYFNBRHWXex4MVyheTMrXgxXqJnK+N+4mhkrBslBFEI9o1/MhBWjBBMsGNTiGf7r5DKCMYiNEjzEBjgAU8qK7Su1nYwAAAAASUVORK5CYII=" 
+                        title="Complete"
+                    />);
+                    break;
+
+            case "error": 
+                result=(
+                    <img 
+                        className="tcf-image"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAZ0lEQVR42mNggIICGYmGzVwM/5ExSIwBGcAkXilzoGCYOIpJzxTZsWK4ySDGYwV2vBhsKoi4J8cGxugAJg5XeEuGFYzRAUwcrvCqJCteDFYI88x5cRasGCWYYMFwRIgJBaMED7EBDgCQirDFSBNkJAAAAABJRU5ErkJggg==" 
+                        title="Complete"
+                    />);
+                    break;
+
+            default:
+                result=(
+                    <span 
+                        className={"glyphicon glyphicon-option-horizontal"} 
+                        title={"Not Set"}
+                    />
+                );
                 break;
         }
 
 
-        return <span className={className} title={tooltip}></span>;
+        return result;;
     }
 }
 
