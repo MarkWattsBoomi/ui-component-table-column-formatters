@@ -65,9 +65,9 @@ This will display an icon in the column which when hovered pops up a dialog
 
 Add attributes: -
 
-hoverboxIcon    -   the name of a glyphicon to show in the hover button
+hoverboxIcon -the name of a glyphicon to show in the hover button.
 
-hoverboxPosition - the relative position of the popup box left, right, upper-left, lower-left, upper-right, lower-right, above, below
+hoverboxPosition - the relative position of the popup box left, right, upper-left, lower-left, upper-right, lower-right, above, below.
 
 use CSS overrides to style it all
 
