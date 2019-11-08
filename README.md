@@ -74,6 +74,7 @@ use CSS overrides to style it all
 the content of the popup box comes from the coulumn value, it supports the "Content" type.
 
 
+
 - TableRowFormatter
 
 This will apply a css style to the table row based on the value of the column.
@@ -128,6 +129,8 @@ Add the corresponding styles to your player e.g.
         	}
         }
     </style>
+
+
 
 
 - LookupValue			
