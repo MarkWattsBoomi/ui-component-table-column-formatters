@@ -14,4 +14,5 @@ export * from './Hyperlink';
 export * from './Thumbnail';
 export * from './DollarValue';
 export * from './TableRowStyler';
+export * from './HoverBox';
 
