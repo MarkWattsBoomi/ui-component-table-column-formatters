@@ -9,10 +9,12 @@ This component allows you to apply numerous formats to data in Flow table column
 
 - Add the file to your player code like this: -
 
+'''
         requires: ['core', 'bootstrap3'],
         customResources: [
                 'https://s3.amazonaws.com/files-manywho-com/tenant-id/ColumnControls.js'
                 ],
+'''
 
 - In the page designer open the metadata and find the column you want to apply the formatter to and change its "componentType" to one of the following: -
 
@@ -93,6 +95,7 @@ This tells the component to look for a value of “complete” in the column and
 
 Add the corresponding styles to your player e.g.
 
+'''
 <style >
         .green-line {
             background-color: green;
@@ -129,7 +132,7 @@ Add the corresponding styles to your player e.g.
         	}
         }
     </style>
-
+'''
 
 
 
