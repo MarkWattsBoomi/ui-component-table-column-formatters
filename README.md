@@ -84,6 +84,33 @@ Add the corresponding styles to your player e.g.
         
         .red-line {
             background-color: red;
+            background: linear-gradient(-45deg, #e59090, #c06868, #ed3737 );
+            background-size: 400% 400%;
+            -webkit-animation: gradientBG 10s ease infinite;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @-webkit-keyframes gradientBG {
+        	0% {
+        		background-position: 0% 50%;
+        	}
+        	50% {
+        		background-position: 100% 50%;
+        	}
+        	100% {
+        		background-position: 0% 50%;
+        	}
+        }
+        @keyframes gradientBG {
+        	0% {
+        		background-position: 0% 50%;
+        	}
+        	50% {
+        		background-position: 100% 50%;
+        	}
+        	100% {
+        		background-position: 0% 50%;
+        	}
         }
     </style>
 
