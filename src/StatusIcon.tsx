@@ -19,6 +19,7 @@ class StatusIcon extends React.Component<any, any>
         var className : any = "glyphicon glyphicon-";
         var tooltip : string = "";
         let result: any;
+        
         switch(this.props.contentValue.toLowerCase())
         {
             case "s":
@@ -28,6 +29,7 @@ class StatusIcon extends React.Component<any, any>
                         title={"Staged"}
                     />
                 );
+                break;
 
             case "c":
                 result=(

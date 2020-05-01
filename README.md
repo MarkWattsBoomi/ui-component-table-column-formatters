@@ -160,7 +160,7 @@ This will display a bootstrap glyph icon and tooltip equivalent to the following
 						""  = glyphicon-option-horizontal  "Not Set"
 						"s" = glyphicon-hourglass  "Staged"
 						"c" = glyphicon-ok  "Complete"
-						"a" = glyphicon-flash  "Active
+						"a" = glyphicon-flash  "Active"
 
 
 - Thumbnail
