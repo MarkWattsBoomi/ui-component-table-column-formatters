@@ -1,0 +1,26 @@
+.voteup {
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+}
+
+.voteup-element {
+    display: flex;
+    flex-direction: row;
+}
+
+.voteup-button {
+    font-size: 26px;
+    cursor: pointer;
+    color: #18344c;
+}
+
+.voteup-button:hover {
+    color: #DF6D59;
+}
+
+.voteup-label {
+    font-size: 26px;
+    text-align: center;
+    margin: auto;
+}

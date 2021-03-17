@@ -1,0 +1,11 @@
+.ranking {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.ranking-label {
+    font-size: 26px;
+    margin: auto;
+}

@@ -49,17 +49,16 @@ class Thumbnail extends React.Component<any, any>
         var outerStyle : React.CSSProperties = {
             boxSizing: "content-box",
             position : "relative" as "relative",
-            display: "grid",
+            display: "table-cell",
             alignContent: 'middle',
-            margin: '0 !important'
-        };
+            margin: '0 !important'        };
 
         if(contentValue)
         {
             let src="";
             return (
                 <div style={outerStyle}>
-                    <img src={contentValue} width={width} style={{marginLeft: 'auto', marginRight: 'auto'}}/>
+                    <img src={contentValue} style={{marginLeft: 'auto', marginRight: 'auto', height: '150px', width: "auto"}}/>
                 </div>
                 );
         }
