@@ -2,30 +2,23 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-export default class DateLocale extends React.Component<any, any> 
-{   
-    constructor(props : any)
-	{
+export default class DateLocale extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() 
-    {
+    componentDidMount() {
         this.forceUpdate();
     }
 
-	render()
-	{
-	   
-        if(this.props.contentValue)
-        {
-            //format the date using React formatter into dt string
-            var dt = new Date(this.props.contentValue);
-            
+	   render() {
+
+        if (this.props.contentValue) {
+            // format the date using React formatter into dt string
+            let dt = new Date(this.props.contentValue);
+
             return <span>{dt.toLocaleDateString()}</span>;
-        }
-        else
-        {
+        } else {
             return null;
         }
     }

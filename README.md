@@ -16,6 +16,12 @@ This component allows you to apply numerous formats to data in Flow table column
                 ],
 '''
 
+Or just add these urls to your player
+```
+https://master-boomi-flow-assets-prod-us-east-1.s3.amazonaws.com/e1dbcceb-070c-4ce6-95b0-ba282aaf4f48/ColumnControls.js
+https://master-boomi-flow-assets-prod-us-east-1.s3.amazonaws.com/e1dbcceb-070c-4ce6-95b0-ba282aaf4f48/ColumnControls.css
+```
+
 - In the page designer open the metadata and find the column you want to apply the formatter to and change its "componentType" to one of the following: -
 
 ## Formatter Types

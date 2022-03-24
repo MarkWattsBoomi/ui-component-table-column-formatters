@@ -2,46 +2,40 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class IntActiveInactive extends React.Component<any, any> 
-{   
-    constructor(props : any)
-	{
+class IntActiveInactive extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() 
-    {
+    componentDidMount() {
         this.forceUpdate();
     }
 
-	render()
-	{
-        var className : any = "glyphicon glyphicon-";
-        var tooltip : string = "";
+	   render() {
+        let className: any = 'glyphicon glyphicon-';
+        let tooltip: string = '';
         let result: any;
-        
-        switch(this.props.contentValue)
-        {
-            case "1":
-                result=(
+
+        switch (this.props.contentValue) {
+            case '1':
+                result = (
                     <span>Active</span>
                 );
                 break;
 
-            case "0":
-                result=(
+            case '0':
+                result = (
                     <span>Inactive</span>
                 );
                 break;
             default:
-                result=(
+                result = (
                     <span/>
                 );
                 break;
         }
 
-
-        return result;;
+        return result;
     }
 }
 

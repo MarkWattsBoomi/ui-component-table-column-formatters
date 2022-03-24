@@ -21,5 +21,4 @@ export * from './IntYesNo';
 export * from './IntActiveInactive';
 export * from './DateLocale';
 export * from './DateTimeLocale';
-
-
+

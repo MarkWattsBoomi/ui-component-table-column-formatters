@@ -2,34 +2,27 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class DateDDMMMYY extends React.Component<any, any> 
-{   
-    constructor(props : any)
-	{
+class DateDDMMMYY extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() 
-    {
+    componentDidMount() {
         this.forceUpdate();
     }
 
-	render()
-	{
-	   
-        if(this.props.contentValue)
-        {
-            //format the date using React formatter into dt string
-            var dt = new Intl.DateTimeFormat('en-GB', {   
-                year: 'numeric', 
-                month: 'long', 
-                day: '2-digit' 
+	   render() {
+
+        if (this.props.contentValue) {
+            // format the date using React formatter into dt string
+            let dt = new Intl.DateTimeFormat('en-GB', {
+                year: 'numeric',
+                month: 'long',
+                day: '2-digit',
             }).format(new Date(this.props.contentValue));
-            
+
             return <span>{dt}</span>;
-        }
-        else
-        {
+        } else {
             return null;
         }
     }

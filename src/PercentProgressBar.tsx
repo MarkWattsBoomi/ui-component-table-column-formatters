@@ -2,77 +2,73 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class PercentProgressBar extends React.Component<any, any> 
-{   
-    constructor(props : any)
-	{
+class PercentProgressBar extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() 
-    {
+    componentDidMount() {
         this.forceUpdate();
     }
 
-	render()
-	{
-        var className : any = "glyphicon glyphicon-";
-        var tooltip : string = "";
+	   render() {
+        let className: any = 'glyphicon glyphicon-';
+        let tooltip: string = '';
 
-        var value = parseInt(this.props.contentValue) || 0;
-        var displayValue = value + "%";
+        let value = parseInt(this.props.contentValue) || 0;
+        let displayValue = value + '%';
 
-        var tooltip : string = value + "%";
-        
-        var outerStyle : React.CSSProperties = {
-                border : "2px solid #adadad",
-                borderRadius:"5px",
-                backgroundColor:"#e3e3e3",
-                height:"30px",
-                boxSizing: "content-box",
-                position : "relative" as "relative",
-                display: "grid",
+        let tooltip: string = value + '%';
+
+        let outerStyle: React.CSSProperties = {
+                border : '2px solid #adadad',
+                borderRadius: '5px',
+                backgroundColor: '#e3e3e3',
+                height: '30px',
+                boxSizing: 'content-box',
+                position : 'relative' as 'relative',
+                display: 'grid',
                 alignContent: 'middle',
-                margin: '0 !important'
+                margin: '0 !important',
             };
 
-        var barStyle : React.CSSProperties = {
-            border: "none",
-            borderRadius:"4px",
-            backgroundColor:"#7D9ACF",
+        let barStyle: React.CSSProperties = {
+            border: 'none',
+            borderRadius: '4px',
+            backgroundColor: '#7D9ACF',
             width: displayValue,
-            textAlign : "center" ,
-            height: "100%",
+            textAlign : 'center' ,
+            height: '100%',
             };
 
-        var captionStyle : React.CSSProperties = {
-            fontFamily : "tahoma",
-            color : "#ffffff",
-            fontSize : "10pt",
-            width : "100%",
-            textAlign : "center",
-            position : "absolute" as "absolute",
-            height: "100%",
-            verticalAlign: "middle",
-            lineHeight: "200%",
-            mixBlendMode: "difference",
-            left: 0
+        let captionStyle: React.CSSProperties = {
+            fontFamily : 'tahoma',
+            color : '#ffffff',
+            fontSize : '10pt',
+            width : '100%',
+            textAlign : 'center',
+            position : 'absolute' as 'absolute',
+            height: '100%',
+            verticalAlign: 'middle',
+            lineHeight: '200%',
+            mixBlendMode: 'difference',
+            left: 0,
             };
 
-        var max = 100;
-        var min = 0;
-        var pos = 60;
+        let max = 100;
+        let min = 0;
+        let pos = 60;
 
         return  <div style={outerStyle}>
                     <div role="progressbar" aria-valuenow={pos} aria-valuemin={min} aria-valuemax={max} style={barStyle}>
                         <span style={captionStyle}>{displayValue}</span>
-                    </div>     
-                </div> 
+                    </div>
+                </div>;
 
     }
 }
 
-//<Tooltip border="#ffffff" radius="5" placement="right" content={tooltip}></Tooltip>
+// <Tooltip border="#ffffff" radius="5" placement="right" content={tooltip}></Tooltip>
 
 manywho.component.register('PercentProgressBar', PercentProgressBar);
 

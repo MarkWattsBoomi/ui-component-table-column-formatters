@@ -2,22 +2,18 @@ declare var manywho: any;
 
 import * as React from 'react';
 
-class DollarValue extends React.Component<any, any> 
-{   
-    constructor(props : any)
-	{
+class DollarValue extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() 
-    {
+    componentDidMount() {
         this.forceUpdate();
     }
 
-	render()
-	{
+	   render() {
         const value: number = this.props.contentValue;
-        const display: string = "$" + value;
+        const display: string = '$' + value;
         return <span>{display}</span>;
     }
 }
