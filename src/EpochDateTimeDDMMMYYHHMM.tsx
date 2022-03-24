@@ -14,7 +14,7 @@ class EpochDateTimeDDMMMYYHHMM extends React.Component<any, any> {
 	   render() {
 
         if (this.props.contentValue) {
-            let secval = this.props.contentValue;
+            const secval = this.props.contentValue;
             let seconds: number = Number.parseInt(this.props.contentValue);
 
             // handle java epoch with decimal point
@@ -22,9 +22,9 @@ class EpochDateTimeDDMMMYYHHMM extends React.Component<any, any> {
                 seconds = seconds * 1000;
             }
 
-            let ed: Date = new Date(seconds);
+            const ed: Date = new Date(seconds);
             // format the date using React formatter into dt string
-            let dt = new Intl.DateTimeFormat('en-GB', {
+            const dt = new Intl.DateTimeFormat('en-GB', {
                 year: 'numeric',
                 month: 'long',
                 day: '2-digit',

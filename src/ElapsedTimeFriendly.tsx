@@ -14,8 +14,8 @@ class ElapsedTimeFriendly extends React.Component<any, any> {
 	   render() {
 
         if (this.props.contentValue) {
-            let dt = new Date(this.props.contentValue);
-            let elapsed = this.elapsedTime(dt);
+            const dt = new Date(this.props.contentValue);
+            const elapsed = this.elapsedTime(dt);
             return <span>{elapsed}</span>;
         } else {
             return null;
@@ -26,7 +26,7 @@ class ElapsedTimeFriendly extends React.Component<any, any> {
       const correctedDate = new Date(fromDate.getTime() + (fromDate.getTimezoneOffset() * 60 * 1000));
       let nTotalDiff = Math.round((new Date()).getTime() / 1000) - (correctedDate.getTime() / 1000);
       if (nTotalDiff >= 0) {
-        let oDiff: any = {};
+        const oDiff: any = {};
         oDiff.days = Math.floor(nTotalDiff / 86400);
         nTotalDiff -= oDiff.days * 86400;
         oDiff.hours = Math.floor(nTotalDiff / 3600);

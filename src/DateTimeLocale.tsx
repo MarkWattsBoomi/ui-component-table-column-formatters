@@ -15,7 +15,7 @@ export default class DateTimeLocale extends React.Component<any, any> {
 
         if (this.props.contentValue) {
             // format the date using React formatter into dt string
-            let dt = new Date(this.props.contentValue);
+            const dt = new Date(this.props.contentValue);
 
             return <span>{dt.toLocaleString()}</span>;
         } else {

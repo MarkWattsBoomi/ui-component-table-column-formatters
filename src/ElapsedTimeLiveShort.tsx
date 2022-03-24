@@ -30,8 +30,8 @@ class ElapsedTimeLiveShort extends React.Component<any, any> {
 	 render() {
 
         if (this.props.contentValue) {
-            let dt = new Date(this.props.contentValue);
-            let elapsed = this.elapsedTime(dt);
+            const dt = new Date(this.props.contentValue);
+            const elapsed = this.elapsedTime(dt);
             return <span>{elapsed}</span>;
         } else {
             return null;
@@ -75,4 +75,3 @@ class ElapsedTimeLiveShort extends React.Component<any, any> {
 manywho.component.register('ElapsedTimeLiveShort', ElapsedTimeLiveShort);
 
 export default ElapsedTimeLiveShort;
-

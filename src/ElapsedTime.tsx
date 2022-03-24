@@ -14,8 +14,8 @@ class ElapsedTime extends React.Component<any, any> {
 	   render() {
 
         if (this.props.contentValue) {
-            let dt = new Date(this.props.contentValue);
-            let elapsed = this.elapsedTime(dt);
+            const dt = new Date(this.props.contentValue);
+            const elapsed = this.elapsedTime(dt);
             return <span>{elapsed}</span>;
         } else {
             return null;
@@ -25,7 +25,7 @@ class ElapsedTime extends React.Component<any, any> {
     elapsedTime(fromDate: Date) {
     let nTotalDiff = Math.round((new Date()).getTime() / 1000) - (fromDate.getTime() / 1000);
     if (nTotalDiff >= 0) {
-      let oDiff: any = {};
+      const oDiff: any = {};
       oDiff.days = Math.floor(nTotalDiff / 86400);
       nTotalDiff -= oDiff.days * 86400;
       oDiff.hours = Math.floor(nTotalDiff / 3600);
@@ -70,4 +70,3 @@ class ElapsedTime extends React.Component<any, any> {
 manywho.component.register('ElapsedTime', ElapsedTime);
 
 export default ElapsedTime;
-

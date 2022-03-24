@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack",
+    "build": "webpack --config webpack.config.production.js",
     "ngrok": "ngrok http --host-header=rewrite 8080"
   },
   "author": "Dell Boomi",

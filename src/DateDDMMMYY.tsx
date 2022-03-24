@@ -15,7 +15,7 @@ class DateDDMMMYY extends React.Component<any, any> {
 
         if (this.props.contentValue) {
             // format the date using React formatter into dt string
-            let dt = new Intl.DateTimeFormat('en-GB', {
+            const dt = new Intl.DateTimeFormat('en-GB', {
                 year: 'numeric',
                 month: 'long',
                 day: '2-digit',

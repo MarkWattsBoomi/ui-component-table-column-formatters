@@ -12,8 +12,8 @@ class StatusIcon extends React.Component<any, any> {
     }
 
 	   render() {
-        let className: any = 'glyphicon glyphicon-';
-        let tooltip: string = '';
+        const className: any = 'glyphicon glyphicon-';
+        const tooltip: string = '';
         let result: any;
 
         switch (this.props.contentValue.toLowerCase()) {

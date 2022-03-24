@@ -12,14 +12,13 @@ class Hyperlink extends React.Component<any, any> {
     }
 
 	   render() {
-        let tooltip: string = '';
 
-        let value = this.props.contentValue || '';
-        let displayValue = value + '%';
+        const value = this.props.contentValue || '';
+        const displayValue = value + '%';
 
-        let tooltip: string = value + '%';
+        const tooltip: string = value + '%';
 
-        let linkStyle = {
+        const linkStyle = {
                 'font-family' : 'tahoma',
                 'color' : '#ffffff',
                 'font-size' : '10pt',
@@ -33,9 +32,9 @@ class Hyperlink extends React.Component<any, any> {
 
             };
 
-        let max = 100;
-        let min = 0;
-        let pos = 60;
+        const max = 100;
+        const min = 0;
+        const pos = 60;
 
         return  <div>
                     <a href={value} target="_blank">{value}</a>

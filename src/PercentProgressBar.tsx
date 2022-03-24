@@ -12,15 +12,13 @@ class PercentProgressBar extends React.Component<any, any> {
     }
 
 	   render() {
-        let className: any = 'glyphicon glyphicon-';
-        let tooltip: string = '';
+        const className: any = 'glyphicon glyphicon-';
+        const value = parseInt(this.props.contentValue) || 0;
+        const displayValue = value + '%';
 
-        let value = parseInt(this.props.contentValue) || 0;
-        let displayValue = value + '%';
+        const tooltip: string = value + '%';
 
-        let tooltip: string = value + '%';
-
-        let outerStyle: React.CSSProperties = {
+        const outerStyle: React.CSSProperties = {
                 border : '2px solid #adadad',
                 borderRadius: '5px',
                 backgroundColor: '#e3e3e3',
@@ -32,7 +30,7 @@ class PercentProgressBar extends React.Component<any, any> {
                 margin: '0 !important',
             };
 
-        let barStyle: React.CSSProperties = {
+        const barStyle: React.CSSProperties = {
             border: 'none',
             borderRadius: '4px',
             backgroundColor: '#7D9ACF',
@@ -41,7 +39,7 @@ class PercentProgressBar extends React.Component<any, any> {
             height: '100%',
             };
 
-        let captionStyle: React.CSSProperties = {
+        const captionStyle: React.CSSProperties = {
             fontFamily : 'tahoma',
             color : '#ffffff',
             fontSize : '10pt',
@@ -55,9 +53,9 @@ class PercentProgressBar extends React.Component<any, any> {
             left: 0,
             };
 
-        let max = 100;
-        let min = 0;
-        let pos = 60;
+        const max = 100;
+        const min = 0;
+        const pos = 60;
 
         return  <div style={outerStyle}>
                     <div role="progressbar" aria-valuenow={pos} aria-valuemin={min} aria-valuemax={max} style={barStyle}>

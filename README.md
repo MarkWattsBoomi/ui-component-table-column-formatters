@@ -64,6 +64,10 @@ This will show the diference between the date and now and show it as a friendly 
 
 - BooleanIcon				This will display a tick for true and a cross for false
 
+### Number Columns
+
+- TwoDecimal        This will force a number to be rounded & formatted to 2 decimal places.
+
 
 ### Specials
 
