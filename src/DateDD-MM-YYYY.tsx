@@ -1,0 +1,35 @@
+declare var manywho: any;
+
+import * as React from 'react';
+
+class DateDashedDDMMYYYY extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.forceUpdate();
+    }
+
+	   render() {
+
+        if (this.props.contentValue) {
+            // format the date using React formatter into dt string
+            let dt: string = new Intl.DateTimeFormat('en-GB', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+            }).format(new Date(this.props.contentValue));
+            while (dt.indexOf('/') >= 0) {
+                dt = dt.replace('/', '-');
+            }
+            return <span>{dt}</span>;
+        } else {
+            return null;
+        }
+    }
+}
+
+manywho.component.register('DateDashedDDMMYYYY', DateDashedDDMMYYYY);
+
+export default DateDashedDDMMYYYY;
