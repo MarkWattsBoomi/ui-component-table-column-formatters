@@ -32,9 +32,13 @@ https://master-boomi-flow-assets-prod-us-east-1.s3.amazonaws.com/e1dbcceb-070c-4
 
 This will output the date like "14 May 07"
 
-- DateDashedDDMMMYYYY
+- DateDashedDDMMYYYY
 
 This will output the date like "14-06-2021"
+
+- DateDashedDDMMMYYYY
+
+This will output the date like "14-Jun-2021"
 
 - DateTimeDDMMMYYHHMM
 
