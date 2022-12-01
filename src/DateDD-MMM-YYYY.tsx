@@ -20,8 +20,8 @@ class DateDashedDDMMMYYYY extends React.Component<any, any> {
                 month: 'long',
                 day: '2-digit',
             }).format(new Date(this.props.contentValue));
-            while (dt.indexOf('/') >= 0) {
-                dt = dt.replace('/', '-');
+            while (dt.indexOf(' ') >= 0) {
+                dt = dt.replace(' ', '-');
             }
             return <span>{dt}</span>;
         } else {
