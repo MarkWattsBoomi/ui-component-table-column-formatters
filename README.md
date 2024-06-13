@@ -36,6 +36,10 @@ This will output the date like "14 May 07"
 
 This will output the date like "14-06-2021"
 
+- DateDashedMMDDYYYY
+
+This will output the date like "06-14-2021"
+
 - DateDashedDDMMMYYYY
 
 This will output the date like "14-Jun-2021"
