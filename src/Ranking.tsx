@@ -1,13 +1,13 @@
-declare var manywho: any;
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+
+import React from 'react';
 import './Ranking.css';
 
 // the contentValue will have the lookup value
 //
-class Ranking extends React.Component<any, any> {
+export class Ranking extends React.Component<any, any> {
     table: any;
+    comp: any;
 
     constructor(props: any) {
         super(props);
@@ -27,8 +27,8 @@ class Ranking extends React.Component<any, any> {
 
     getTable() {
         let maxLevels = 10;
-        const me = ReactDom.findDOMNode(this);
-        let parent: HTMLElement = me.parentElement;
+        
+        let parent: HTMLElement = this.comp.parentElement;
         while (!parent.classList.contains('table-container') || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -109,6 +109,7 @@ class Ranking extends React.Component<any, any> {
         return (
             <div
                 className="ranking"
+                ref={(element: any) => {this.comp = element}}
             >
                 <span
                     className="ranking-label"
@@ -120,6 +121,3 @@ class Ranking extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('Ranking', Ranking);
-
-export default Ranking;

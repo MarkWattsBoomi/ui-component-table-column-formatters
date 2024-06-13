@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class IntActiveInactive extends React.Component<any, any> {
+import React from 'react';
+
+export class IntActiveInactive extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -39,6 +39,3 @@ class IntActiveInactive extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('IntActiveInactive', IntActiveInactive);
-
-export default IntActiveInactive;

@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class ElapsedTime extends React.Component<any, any> {
+import React from 'react';
+
+export class ElapsedTime extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -67,6 +67,4 @@ class ElapsedTime extends React.Component<any, any> {
   }
 }
 
-manywho.component.register('ElapsedTime', ElapsedTime);
 
-export default ElapsedTime;

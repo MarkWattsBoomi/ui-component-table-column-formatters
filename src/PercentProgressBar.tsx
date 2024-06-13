@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class PercentProgressBar extends React.Component<any, any> {
+import React from 'react';
+
+export class PercentProgressBar extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -66,8 +66,4 @@ class PercentProgressBar extends React.Component<any, any> {
     }
 }
 
-// <Tooltip border="#ffffff" radius="5" placement="right" content={tooltip}></Tooltip>
 
-manywho.component.register('PercentProgressBar', PercentProgressBar);
-
-export default PercentProgressBar;

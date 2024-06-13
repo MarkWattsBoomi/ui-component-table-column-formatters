@@ -1,8 +1,6 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-
-export default class DateTimeLocale extends React.Component<any, any> {
+export class DateTimeLocale extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -24,4 +22,3 @@ export default class DateTimeLocale extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('DateTimeLocale', DateTimeLocale);

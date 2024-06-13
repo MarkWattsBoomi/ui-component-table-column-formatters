@@ -1,9 +1,9 @@
-declare var manywho: any;
 
-import * as React from 'react';
+
+import React from 'react';
 import { iElapsed, TimeHelpers } from './DateTimeHelpers';
 
-class ElapsedTimeLiveShort extends React.Component<any, any> {
+export class ElapsedTimeLiveShort extends React.Component<any, any> {
 
   timerID = -1;
 
@@ -72,6 +72,3 @@ class ElapsedTimeLiveShort extends React.Component<any, any> {
   }
 }
 
-manywho.component.register('ElapsedTimeLiveShort', ElapsedTimeLiveShort);
-
-export default ElapsedTimeLiveShort;

@@ -1,14 +1,14 @@
-declare var manywho: any;
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+
+
+import React from 'react';
 import './VoteUp.css';
 
 // the contentValue will have the lookup value
 //
-class VoteUp extends React.Component<any, any> {
+export class VoteUp extends React.Component<any, any> {
     table: any;
-
+    comp: any;
     constructor(props: any) {
         super(props);
         // this.myRef = React.createRef();
@@ -27,8 +27,8 @@ class VoteUp extends React.Component<any, any> {
 
     getTable() {
         let maxLevels = 10;
-        const me = ReactDom.findDOMNode(this);
-        let parent: HTMLElement = me.parentElement;
+        
+        let parent: HTMLElement = this.comp.parentElement;
         while (!parent.classList.contains('table-container') || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -111,6 +111,7 @@ class VoteUp extends React.Component<any, any> {
         return (
             <div
                 className="voteup"
+                ref={(element: any) => {this.comp = element}}
             >
                 <div
                     className="voteup-element"
@@ -145,6 +146,3 @@ class VoteUp extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('VoteUp', VoteUp);
-
-export default VoteUp;

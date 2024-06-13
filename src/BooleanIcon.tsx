@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class BooleanIcon extends React.Component<any, any> {
+import React from 'react';
+
+export class BooleanIcon extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -22,7 +22,3 @@ class BooleanIcon extends React.Component<any, any> {
     return <span className={className}></span>;
     }
 }
-
-manywho.component.register('BooleanIcon', BooleanIcon);
-
-export default BooleanIcon;

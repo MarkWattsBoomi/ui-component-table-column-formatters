@@ -1,8 +1,6 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-
-class DollarValue extends React.Component<any, any> {
+export class DollarValue extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -18,6 +16,3 @@ class DollarValue extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('DollarValue', DollarValue);
-
-export default DollarValue;

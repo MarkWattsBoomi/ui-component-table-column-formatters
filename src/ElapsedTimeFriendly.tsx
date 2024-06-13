@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class ElapsedTimeFriendly extends React.Component<any, any> {
+import React from 'react';
+
+export class ElapsedTimeFriendly extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -67,7 +67,3 @@ class ElapsedTimeFriendly extends React.Component<any, any> {
       }
     }
 }
-
-manywho.component.register('ElapsedTimeFriendly', ElapsedTimeFriendly);
-
-export default ElapsedTimeFriendly;

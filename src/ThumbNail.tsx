@@ -1,9 +1,11 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
 
-class Thumbnail extends React.Component<any, any> {
+
+export class ThumbNail extends React.Component<any, any> {
+
+    comp: any;
+
     constructor(props: any) {
         super(props);
     }
@@ -14,11 +16,11 @@ class Thumbnail extends React.Component<any, any> {
 
 	   render() {
 
-        const me = ReactDom.findDOMNode(this);
+        
         let contentValue: string;
         let width: number;
-        if (me) {
-            let parent: HTMLElement = me.parentElement;
+        if (this.comp) {
+            let parent: HTMLElement = this.comp.parentElement;
             let maxLevels = 10;
             while (!parent.classList.contains('table-container') || maxLevels == 0) {
                 parent = parent.parentElement;
@@ -49,7 +51,10 @@ class Thumbnail extends React.Component<any, any> {
         if (contentValue) {
             const src = '';
             return (
-                <div style={outerStyle}>
+                <div 
+                    style={outerStyle}
+                    ref={(element: any) => {this.comp = element}}
+                >
                     <img src={contentValue} style={{marginLeft: 'auto', marginRight: 'auto', height: '150px', width: 'auto'}}/>
                 </div>
                 );
@@ -61,6 +66,3 @@ class Thumbnail extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('Thumbnail', Thumbnail);
-
-export default Thumbnail;

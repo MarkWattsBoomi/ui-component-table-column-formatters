@@ -1,13 +1,14 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
 
-class HoverBox extends React.Component<any, any> {
+
+export class HoverBox extends React.Component<any, any> {
     isOverButton: boolean = false;
     isOverDialog: boolean = false;
 
     hoverBoxShown: boolean = false; // change to false
+
+    comp: any;
 
     constructor(props: any) {
         super(props);
@@ -84,12 +85,12 @@ class HoverBox extends React.Component<any, any> {
 
 	   render() {
         let hoverBox: any;
-        const me = ReactDom.findDOMNode(this);
+        
         let icon: string;
         let position: string;
 
         const value: any = this.props.contentValue;
-        if (me) {
+        if (this.comp) {
             const tableElement: HTMLElement = this.getParentTableElement();
             // const rowElement: HTMLElement = this.getParentRowElement();
             const tdElement: HTMLElement = this.getParentTDElement();
@@ -178,6 +179,7 @@ class HoverBox extends React.Component<any, any> {
 
         return (
             <div
+                ref={(element: any) => {this.comp = element}}
                 className="hoverbox"
                 style={{
                     position: 'absolute',
@@ -219,9 +221,9 @@ class HoverBox extends React.Component<any, any> {
     }
 
     getParentTableElement(): HTMLElement | undefined {
-        const me = ReactDom.findDOMNode(this);
+
         let maxLevels = 10;
-        let parent: HTMLElement = me.parentElement;
+        let parent: HTMLElement = this.comp.parentElement;
         while (!parent.classList.contains('table-container') || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -236,9 +238,9 @@ class HoverBox extends React.Component<any, any> {
     }
 
     getParentTDElement(): HTMLElement | undefined {
-        const me = ReactDom.findDOMNode(this);
+
         let maxLevels = 10;
-        let parent: HTMLElement = me.parentElement;
+        let parent: HTMLElement = this.comp.parentElement;
         while (parent.tagName.toLowerCase() !== 'td' || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -253,9 +255,9 @@ class HoverBox extends React.Component<any, any> {
     }
 
     getParentRowElement(): HTMLElement | undefined {
-        const me = ReactDom.findDOMNode(this);
+        
         let maxLevels = 10;
-        let parent: HTMLElement = me.parentElement;
+        let parent: HTMLElement = this.comp.parentElement;
         while (parent.tagName.toLowerCase() !== 'tr' || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -276,6 +278,3 @@ class HoverBox extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('HoverBox', HoverBox);
-
-export default HoverBox;

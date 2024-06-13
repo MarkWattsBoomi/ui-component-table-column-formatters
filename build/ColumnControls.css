@@ -1,37 +1,35 @@
+/* src/VoteUp.css */
 .voteup {
-   display: flex;
-   flex-direction: column;
-   width: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
-
 .voteup-element {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-
 .voteup-button {
-    font-size: 26px;
-    cursor: pointer;
-    color: #18344c;
+  font-size: 26px;
+  cursor: pointer;
+  color: #18344c;
 }
-
 .voteup-button:hover {
-    color: #DF6D59;
+  color: #DF6D59;
 }
-
 .voteup-label {
-    font-size: 26px;
-    text-align: center;
-    margin: auto;
-}
-.ranking {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  font-size: 26px;
+  text-align: center;
+  margin: auto;
 }
 
+/* src/Ranking.css */
+.ranking {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
 .ranking-label {
-    font-size: 26px;
-    margin: auto;
+  font-size: 26px;
+  margin: auto;
 }

@@ -1,9 +1,11 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
 
-class TableRowStyler extends React.Component<any, any> {
+
+export class TableRowStyler extends React.Component<any, any> {
+
+    comp: any;
+
     constructor(props: any) {
         super(props);
         this.getParentTableElement = this.getParentTableElement.bind(this);
@@ -25,9 +27,9 @@ class TableRowStyler extends React.Component<any, any> {
     }
 
 	   render() {
-        const me = ReactDom.findDOMNode(this);
+
         const value: any = this.props.contentValue;
-        if (me) {
+        if (this.comp) {
             const tableElement: HTMLElement = this.getParentTableElement();
             const rowElement: HTMLElement = this.getParentRowElement();
 
@@ -45,13 +47,19 @@ class TableRowStyler extends React.Component<any, any> {
 
         }
 
-        return <span>{value}</span>;
+        return (
+            <span
+                ref={(element: any) => {this.comp = element}}
+            >
+                {value}
+            </span>
+        );
     }
 
     getParentTableElement(): HTMLElement | undefined {
-        const me = ReactDom.findDOMNode(this);
+        
         let maxLevels = 10;
-        let parent: HTMLElement = me.parentElement;
+        let parent: HTMLElement = this.comp.parentElement;
         while (!parent.classList.contains('table-container') || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -66,9 +74,9 @@ class TableRowStyler extends React.Component<any, any> {
     }
 
     getParentRowElement(): HTMLElement | undefined {
-        const me = ReactDom.findDOMNode(this);
+        
         let maxLevels = 10;
-        let parent: HTMLElement = me.parentElement;
+        let parent: HTMLElement = this.comp.parentElement;
         while (parent.tagName.toLowerCase() !== 'tr' || maxLevels == 0) {
             parent = parent.parentElement;
             maxLevels--;
@@ -89,6 +97,5 @@ class TableRowStyler extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('TableRowStyler', TableRowStyler);
 
 export default TableRowStyler;

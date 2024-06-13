@@ -4,55 +4,20 @@
   "description": "table column formaters",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --config webpack.config.production.js",
-    "ngrok": "ngrok http --host-header=rewrite 8080"
+    "startLegacy": "esbuild ./src/index.tsx --outfile=./build/ColumnControls.js --sourcemap=both --serve=8080 --servedir=build --bundle --format=esm --watch",
+    "buildLegacy": "esbuild ./src/index.tsx --outfile=./build/ColumnControls.js --bundle  --format=esm"
   },
   "author": "Dell Boomi",
   "license": "MIT",
   "dependencies": {
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.7",
-    "npm": "^6.14.4",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.0"
+    "buffer": "^6.0.3",
+    "react": "18.2.0"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.1.11",
-    "@types/enzyme-adapter-react-16": "^1.0.2",
-    "@types/loglevel": "^1.5.3",
+    "@types/node": "^20.11.21",
     "@types/react": "^16.7.3",
-    "@types/react-dom": "^16.0.9",
-    "awesome-typescript-loader": "5.2.0",
-    "clipboardy": "^1.2.3",
-    "colors": "^1.3.1",
-    "css-loader": "^2.1.1",
-    "download": "^7.1.0",
-    "fs-extra": "^7.0.1",
-    "glob-promise": "^3.4.0",
-    "inquirer": "^6.0.0",
-    "inquirer-autocomplete-prompt": "^1.0.1",
-    "mime-types": "^2.1.19",
-    "mini-css-extract-plugin": "^0.5.0",
-    "react-test-renderer": "^16.4.1",
-    "recursive-copy": "^2.0.9",
-    "request-promise-native": "^1.0.5",
-    "source-map-loader": "^0.2.3",
-    "style-loader": "0.21.0",
-    "three-way-merger": "^0.5.0",
-    "tslint": "^5.10.0",
-    "tslint-loader": "3.6.0",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.4.2",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.1.14",
-    "write-file-webpack-plugin": "4.4.1"
-  },
-  "flow": {
-    "filenames": {
-      "js": "ColumnControls.js",
-      "css": "ColumnControls.css"
-    }
+    "@types/react-dom": "^18.3.0",
+    "esbuild": "^0.20.1",
+    "typescript": "^4.0.0"
   }
 }

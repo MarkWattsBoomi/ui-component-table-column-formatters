@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class IntYesNo extends React.Component<any, any> {
+import React from 'react';
+
+export class IntYesNo extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -39,6 +39,3 @@ class IntYesNo extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('IntYesNo', IntYesNo);
-
-export default IntYesNo;

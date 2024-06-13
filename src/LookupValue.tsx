@@ -1,12 +1,11 @@
-declare var manywho: any;
+import React from "react";
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+
 
 // the contentValue will have the lookup value
 //
-class LookupValue extends React.Component<any, any> {
-    // myRef : any;
+export class LookupValue extends React.Component<any, any> {
+    comp : any;
     // parentId : any;
     constructor(props: any) {
         super(props);
@@ -58,12 +57,12 @@ class LookupValue extends React.Component<any, any> {
     }
 
 	   render() {
-        const me = ReactDom.findDOMNode(this);
+
         let label: string = '';
-        if (this.props.contentValue && me) {
+        if (this.props.contentValue && this.comp) {
             // iterate up looking for the element with class .table-container, it will have the table's id value on it
             let maxLevels = 10;
-            let parent: HTMLElement = me.parentElement;
+            let parent: HTMLElement = this.comp.parentElement;
             while (!parent.classList.contains('table-container') || maxLevels == 0) {
                 parent = parent.parentElement;
                 maxLevels--;
@@ -88,10 +87,7 @@ class LookupValue extends React.Component<any, any> {
                 }
             }
         }
-        return <span>{label}</span>;
+        return <span ref={(element: any) => {this.comp = element}}>{label}</span>;
     }
 }
 
-manywho.component.register('LookupValue', LookupValue);
-
-export default LookupValue;

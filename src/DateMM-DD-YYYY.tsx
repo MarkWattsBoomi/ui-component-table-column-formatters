@@ -1,8 +1,8 @@
-import React from "react";
 
 
+import React from 'react';
 
-export class DateDashedDDMMMYYYY extends React.Component<any, any> {
+export class DateDashedMMDDYYYY extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -15,13 +15,13 @@ export class DateDashedDDMMMYYYY extends React.Component<any, any> {
 
         if (this.props.contentValue) {
             // format the date using React formatter into dt string
-            let dt = new Intl.DateTimeFormat('en-GB', {
+            let dt: string = new Intl.DateTimeFormat('en-US', {
                 year: 'numeric',
-                month: 'long',
+                month: '2-digit',
                 day: '2-digit',
             }).format(new Date(this.props.contentValue));
-            while (dt.indexOf(' ') >= 0) {
-                dt = dt.replace(' ', '-');
+            while (dt.indexOf('/') >= 0) {
+                dt = dt.replace('/', '-');
             }
             return <span>{dt}</span>;
         } else {
@@ -29,4 +29,5 @@ export class DateDashedDDMMMYYYY extends React.Component<any, any> {
         }
     }
 }
+
 

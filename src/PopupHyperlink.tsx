@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class PopupHyperlink extends React.Component<any, any> 
+import React from 'react';
+
+export class PopupHyperlink extends React.Component<any, any> 
 {   
     constructor(props : any)
 	{
@@ -46,9 +46,3 @@ class PopupHyperlink extends React.Component<any, any>
                 </div>  
     }
 }
-
-//<Tooltip border="#ffffff" radius="5" placement="right" content={tooltip}></Tooltip>
-
-manywho.component.register('PopupHyperlink', PopupHyperlink);
-
-export default PopupHyperlink;

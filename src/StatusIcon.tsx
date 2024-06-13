@@ -1,8 +1,8 @@
-declare var manywho: any;
 
-import * as React from 'react';
 
-class StatusIcon extends React.Component<any, any> {
+import React from 'react';
+
+export class StatusIcon extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
@@ -76,6 +76,3 @@ class StatusIcon extends React.Component<any, any> {
     }
 }
 
-manywho.component.register('StatusIcon', StatusIcon);
-
-export default StatusIcon;
