@@ -3,6 +3,7 @@
 
 import React from 'react';
 import './VoteUp.css';
+declare const manywho: any;
 
 // the contentValue will have the lookup value
 //
